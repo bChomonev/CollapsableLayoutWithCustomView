@@ -1,0 +1,132 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="top_fragment_height">200dp</dimen>
+    <dimen name="top_fragment_margin">10dip</dimen>
+    <dimen name="divider_height">1dip</dimen>
+    <dimen name="dp30">30dip</dimen>
+    <dimen name="dp36">36dip</dimen>
+    <dimen name="dp35">35dip</dimen>
+    <dimen name="dp40">40dip</dimen>
+    <dimen name="dp20">20dip</dimen>
+    <dimen name="dp10">10dip</dimen>
+    <dimen name="dp150">150dip</dimen>
+    <dimen name="dp210">210dp</dimen>
+    <dimen name="dp220">220dp</dimen>
+    <dimen name="dp250">250dp</dimen>
+    <dimen name="dp200">200dp</dimen>
+    <dimen name="dp300">300dp</dimen>
+    <dimen name="dp100">100dip</dimen>
+    <dimen name="dp122">122dip</dimen>
+    <dimen name="dp95">95dp</dimen>
+    <dimen name="dp85">85dp</dimen>
+    <dimen name="dp240">240dp</dimen>
+    <dimen name="dp180">180dp</dimen>
+    <dimen name="dp120">120dp</dimen>
+    <dimen name="dp290">290dp</dimen>
+    <dimen name="dp270">270dp</dimen>
+    <dimen name="dp230">230dp</dimen>
+    <dimen name="dp308">308dp</dimen>
+    <dimen name="dp360">360dp</dimen>
+    <dimen name="dp175">175dp</dimen>
+    <dimen name="dp25">25dp</dimen>
+    <dimen name="dp_negative_30">-30dp</dimen>
+    <dimen name="dp_negative_90">-90dp</dimen>
+    <dimen name="dp195">195dip</dimen>
+    <dimen name="upload_video_thumbnail_height">200dp</dimen>
+
+    <dimen name="check_box_padding">42dp</dimen>
+    <dimen name="like_dislike_padding">20dp</dimen>
+
+
+    <dimen name="suggestedBottomPaddingWithPlaylist">88dp</dimen>
+
+    <dimen name="playlistImageWidth">100dp</dimen>
+    <dimen name="playlistImageHeight">60dp</dimen>
+
+    <dimen name="negativePx2ToDp">-2dp</dimen>
+    <dimen name="negativePx5ToDp">-5dp</dimen>
+    <dimen name="negativePx6ToDp">-6dp</dimen>
+    <dimen name="negativePx8ToDp">-8dp</dimen>
+    <dimen name="negativePx9ToDp">-9dp</dimen>
+    <dimen name="negativePx10ToDp">-10dp</dimen>
+    <dimen name="negativePx12ToDp">-12dp</dimen>
+    <dimen name="negativePx14ToDp">-14dp</dimen>
+    <dimen name="negativePx15.5ToDp">-15.5dp</dimen>
+    <dimen name="negativePx18ToDp">-18dp</dimen>
+    <dimen name="negativePx40ToDp">-40dp</dimen>
+
+
+    <!-- in mdpi -->
+    <dimen name="px0.5ToDp">0.5dp</dimen>
+    <dimen name="px1ToDp">1dp</dimen>
+    <dimen name="px5ToDp">5dp</dimen>
+    <dimen name="px6ToDp">6dp</dimen>
+    <dimen name="px7ToDp">7dp</dimen>
+    <dimen name="px7.5ToDp">7.5dp</dimen>
+    <dimen name="px8ToDp">8dp</dimen>
+    <dimen name="px9ToDp">9dp</dimen>
+    <dimen name="px10ToDp">10dp</dimen>
+    <dimen name="px11ToDp">11dp</dimen>
+    <dimen name="px12ToDp">12dp</dimen>
+    <dimen name="px13ToDp">13dp</dimen>
+    <dimen name="px14ToDp">14dp</dimen>
+    <dimen name="px15ToDp">15dp</dimen>
+    <dimen name="px16ToDp">16dp</dimen>
+    <dimen name="px17ToDp">17dp</dimen>
+    <dimen name="px12.5ToDp">12.5dp</dimen>
+    <dimen name="px15.5ToDp">15.5dp</dimen>
+    <dimen name="px17.5ToDp">17.5dp</dimen>
+    <dimen name="px18ToDp">18dp</dimen>
+    <dimen name="px20ToDp">20dp</dimen>
+    <dimen name="px22ToDp">22dp</dimen>
+    <dimen name="px24ToDp">24dp</dimen>
+    <dimen name="px25ToDp">25dp</dimen>
+    <dimen name="px26ToDp">26dp</dimen>
+    <dimen name="px28ToDp">28dp</dimen>
+    <dimen name="px30ToDp">30dp</dimen>
+    <dimen name="px32ToDp">32dp</dimen>
+    <dimen name="px34ToDp">34dp</dimen>
+    <dimen name="px36ToDp">36dp</dimen>
+    <dimen name="px38ToDp">38dp</dimen>
+    <dimen name="px40ToDp">40dp</dimen>
+    <dimen name="px42ToDp">42dp</dimen>
+    <dimen name="px43ToDp">43dp</dimen>
+    <dimen name="px46ToDp">46dp</dimen>
+    <dimen name="px47.5ToDp">47.5dp</dimen>
+    <dimen name="px50ToDp">50dp</dimen>
+    <dimen name="px52ToDp">52dp</dimen>
+    <dimen name="px56ToDp">56dp</dimen>
+    <dimen name="px58ToDp">58dp</dimen>
+    <dimen name="px60ToDp">60dp</dimen>
+    <dimen name="px64ToDp">64dp</dimen>
+    <dimen name="px65ToDp">65dp</dimen>
+    <dimen name="px70ToDp">70dp</dimen>
+    <dimen name="px76ToDp">76dp</dimen>
+    <dimen name="px88ToDp">88dp</dimen>
+    <dimen name="px90ToDp">90dp</dimen>
+    <dimen name="px100ToDp">100dp</dimen>
+    <dimen name="px146ToDp">146dp</dimen>
+    <dimen name="px147ToDp">147dp</dimen>
+    <dimen name="px150ToDp">150dp</dimen>
+    <dimen name="px190ToDp">190dp</dimen>
+    <dimen name="px191ToDp">191dp</dimen>
+    <dimen name="px200ToDp">200dp</dimen>
+    <dimen name="px250ToDp">250dp</dimen>
+    <dimen name="px300ToDp">300dp</dimen>
+    <dimen name="px400ToDp">400dp</dimen>
+    <dimen name="px282ToDp">282dp</dimen>
+    <dimen name="px328ToDp">328dp</dimen>
+
+    <!--  Text sizes in mdpi-->
+    <dimen name="px10ToSp">10sp</dimen>
+    <dimen name="px12ToSp">12sp</dimen>
+    <dimen name="px13ToSp">13sp</dimen>
+    <dimen name="px14ToSp">14sp</dimen>
+    <dimen name="px16ToSp">16sp</dimen>
+    <dimen name="px17ToSp">17sp</dimen>
+    <dimen name="px18ToSp">18sp</dimen>
+</resources>

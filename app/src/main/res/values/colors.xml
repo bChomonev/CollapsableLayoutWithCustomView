@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+
+    <color name="background_body">#eeeeee</color>
+    <color name="background_header">#ffffff</color>
+    <color name="darker_then_background_body">#e4e4e4</color>
+    <color name="background_time">#212121</color>
+    <color name="lines">#66bdbdbd</color>
+    <color name="overlay_big_video">#4d000000</color>
+    <color name="text_time">#ffffff</color>
+    <color name="text_titles_links">#212121</color>
+    <color name="text_titles_links_pressed">#80212121</color>
+    <color name="body_text">#515151</color>
+    <color name="vbox_pink">#e82164</color>
+    <color name="black_transparent_50percent">#80000000</color>
+    <color name="black_transparent_20percent">#33000000</color>
+    <color name="black_transparent_30percent">#4d000000</color>
+    <color name="black_transparent_70percent">#B3000000</color>
+    <color name="popup_background">#ffffff</color>
+    <color name="playlist_expanded_background">#1B1B1B</color>
+    <color name="playlist_header_background">#212121</color>
+    <color name="playlist_header_background_numbers">#272727</color>
+    <color name="playlist_item_selected_background">#272727</color>
+    <color name="upload_video_thumb_background">#272727</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_transparency_40">#66ffffff</color>
+
+
+    <color name="playlist_title">#ffffff</color>
+    <color name="playlist_current">#ffffff</color>
+    <color name="playlist_counter">#9e9e9e</color>
+    <color name="input_text">#9e9e9e</color>
+    <color name="input_text_message_and_comments">#212121</color>
+    <color name="like_dislike_color">#515151</color>
+
+    <!-- subscribed colors-->
+    <color name="subscribed">#515151</color>
+    <color name="not_subscribed">#e82164</color>
+    <color name="add_subscription">#e82164</color>
+
+    <color name="DrawerGrey">#999999</color>
+    <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="username_text_color">#212121</color>
+    <color name="Vbox7Pink">#ED0F64</color>
+    <color name="Vbox7BlueLink">#2762CA</color>
+    <color name="Vbox7GreyBackground">#F4F4F4</color>
+    <color name="Vbox7RedWarning">#FC1921</color>
+    <color name="Vbox7GreyInactiveText">#A9A9A9</color>
+    <color name="Vbox7PinkTransparent">#ED82A9</color>
+    <color name="custom_black">#000000</color>
+    <color name="slideOutTextHeaderColor">#F1F1F1</color>
+    <color name="slideOutTextContentColor">#A6A8AB</color>
+    <color name="Vbox7ProgressBar">#ED0F64</color>
+    <color name="realBlackTransparent">#90000000</color>
+    <color name="complete_transperant">#00000000</color>
+</resources>
