@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
+    android:minHeight="100dp"
     android:paddingBottom="5dp"
     android:paddingTop="5dp"
     android:scaleType="centerCrop"
-    android:visibility="visible">
+    android:visibility="visible"
+    app:layout_collapseMode="parallax">
 
     <include
         layout="@layout/toolbar"
@@ -22,5 +24,4 @@
         android:layout_below="@+id/toolbar"
         android:scaleType="fitCenter"
         android:src="@drawable/image_one" />
-
 </RelativeLayout>
