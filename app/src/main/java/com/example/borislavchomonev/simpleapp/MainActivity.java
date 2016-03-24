@@ -1,18 +1,13 @@
 package com.example.borislavchomonev.simpleapp;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ImageSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +21,7 @@ import tabs.SlidingTabLayout;
 public class MainActivity extends AppCompatActivity {
     boolean goRight = true;
     private ImageView bigImage;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-
             }
 
             @Override
@@ -66,32 +61,26 @@ public class MainActivity extends AppCompatActivity {
                 if (state == 0 || state == 2) {
                     changeImage(mPager.getCurrentItem());
                 }
+                boolean visible = fab.getVisibility() == View.VISIBLE;
+                if (state == 1 && visible) {
+                    fab.hide();
+                } else if (state == 0) {
+                    fab.show();
+                }
             }
         });
     }
 
     private void initFloatingBtn(final ViewPager mPager, final CustomPagerAdapter adapter) {
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                Drawable drawable = getResources().getDrawable(R.drawable.emoticons02);
-                assert drawable != null;
-                int dp36 = getResources().getDimensionPixelSize(R.dimen.dp36);
-                drawable.setBounds(0, 0, dp36, dp36);
-                ImageSpan imageSpan = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
-                SpannableString spannableString = new SpannableString("You don't like this page?  ");
-                spannableString.setSpan(imageSpan, spannableString.length() - 1, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-
-                Snackbar.make(view, spannableString, Snackbar.LENGTH_LONG)
-                        .setAction("Change", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                changePage(mPager, adapter);
-                            }
-                        }).show();
+            public void onClick(View v) {
+                boolean visible = fab.getVisibility() == View.VISIBLE;
+                if (visible) {
+                    fab.hide();
+                }
+                changePage(mPager, adapter);
             }
         });
     }
