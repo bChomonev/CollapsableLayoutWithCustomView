@@ -26,8 +26,7 @@ public class CustomPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        MainActivity.MyFragment myFragment = MainActivity.MyFragment.getInstance(position);
-        return myFragment;
+        return MainActivity.MyFragment.getInstance(position);
     }
 
     @Override
@@ -35,6 +34,15 @@ public class CustomPagerAdapter extends FragmentPagerAdapter {
         return 3;
     }
 
+
+    /**
+     * In Order to show images instead of text for the tabs titles
+     * we have to use SpannableString because
+     * getPageTitle returns CharSequence so cannot return just image
+     *
+     * @param position
+     * @return SpannableString with drawable
+     */
     @Override
     public CharSequence getPageTitle(int position) {
         Drawable drawable = context.getResources().getDrawable(icons[position]);

@@ -22,18 +22,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView;
         public ImageView mIcon;
-        public RelativeLayout suggesionsRow;
 
         public ViewHolder(RelativeLayout v) {
             super(v);
             TextView tvTitle = (TextView) v
                     .findViewById(R.id.text2);
             ImageView icon = (ImageView) v.findViewById(R.id.icon1);
-            RelativeLayout suggesionsRow = (RelativeLayout) v.findViewById(R.id.suggestions_row);
 
             mTextView = tvTitle;
             mIcon = icon;
-            this.suggesionsRow = suggesionsRow;
         }
     }
 
@@ -41,17 +38,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                          int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        RelativeLayout v = (RelativeLayout) inflater.inflate(R.layout.view_suggestions_view, parent, false);
+        RelativeLayout v = (RelativeLayout) inflater.inflate(R.layout.view_list_row, parent, false);
 
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         String item = getItems().get(position);
         holder.mTextView.setText(item);
-        String text = mDataset.get(position);
     }
 
     public List<String> getItems() {

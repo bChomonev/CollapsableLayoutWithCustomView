@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
         mPager.setAdapter(adapter);
         SlidingTabLayout mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
         mTabs.setCustomTabView(R.layout.custom_tabs_view, R.id.tabText);
+
+        /**
+         * This method will make every tab to have same width
+         */
         mTabs.setDistributeEvenly(true);
-        mTabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
-            @Override
-            public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.background_body);
-            }
-        });
+
+        mTabs.setSelectedIndicatorColors(R.color.background_body);
         mTabs.setViewPager(mPager);
         mTabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -58,9 +58,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
+                /**
+                 * changes the big picture
+                 */
                 if (state == 0 || state == 2) {
                     changeImage(mPager.getCurrentItem());
                 }
+
+                /**
+                 * show\hide FAB button when pages change
+                 */
                 boolean visible = fab.getVisibility() == View.VISIBLE;
                 if (state == 1 && visible) {
                     fab.hide();
@@ -121,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
         mPager.setCurrentItem(currentItem, true);
     }
 
+    /**
+     * Simple fragment to be used for the sample
+     */
     public static class MyFragment extends Fragment {
         public static MyFragment getInstance(int position) {
             return new MyFragment();

@@ -9,6 +9,10 @@ import android.view.View;
 
 /**
  * Created by borislav.chomonev on 24/03/2016.
+ * <p/>
+ * This Class implements custom scrolling behavior for FloatingActionButton(FAB)
+ * The logic is simple:
+ * if the user scrolls down we hide FAB otherwise we show it
  */
 public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
 
