@@ -10,13 +10,6 @@ def getBuildVersionCode() {
 }
 //<--- remove this when using jenkins
 
-def renameAPK(variant, defaultConfig, buildType) {
-    variant.outputs.each { output ->
-        def fileName = 'chomonev' + "_V" + defaultConfig.versionCode + "_" + buildType + ".apk"
-        output.packageApplication.outputFile = new File('/Users/chomonev/Android Projects/SimpleApp/app/wtf', fileName)
-    }
-}
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -27,7 +20,7 @@ android {
         targetSdkVersion 21
 
         //Get versionCode from jenkins environment variable
-         versionCode System.getenv("BUILD_NUMBER") as Integer ?: 11
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 12
 //        versionCode getBuildVersionCode()
 
         versionName "1.0"
@@ -53,7 +46,13 @@ android {
             storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
 
             applicationVariants.all { variant ->
-                renameAPK(variant, defaultConfig, 'release')
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = outputFile.name.replace('.apk', "-${versionName}.apk")
+                        output.outputFile = new File('/Users/chomonev/Android Projects/SimpleApp/app/wtf', fileName)
+                    }
+                }
             }
 
             //Read from environment with jenkins
