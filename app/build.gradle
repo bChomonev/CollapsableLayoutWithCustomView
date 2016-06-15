@@ -10,6 +10,13 @@ def getBuildVersionCode() {
 }
 //<--- remove this when using jenkins
 
+def renameAPK(variant, defaultConfig, buildType) {
+    variant.outputs.each { output ->
+        def fileName = 'chomonev' + "_V" + defaultConfig.versionCode + "_" + buildType + ".apk"
+        output.packageApplication.outputFile = new File('/Users/chomonev/Android Projects/SimpleApp/app/wtf', fileName)
+    }
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -20,7 +27,7 @@ android {
         targetSdkVersion 21
 
         //Get versionCode from jenkins environment variable
-         versionCode System.getenv("BUILD_NUMBER") as Integer ?: 10
+         versionCode System.getenv("BUILD_NUMBER") as Integer ?: 11
 //        versionCode getBuildVersionCode()
 
         versionName "1.0"
@@ -42,16 +49,20 @@ android {
             keyAlias 'natlot'
             storePassword keyStorePassword
             keyPassword password
-//            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
-            storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
+            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
+//            storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
+
+            applicationVariants.all { variant ->
+                renameAPK(variant, defaultConfig, 'R')
+            }
 
             //Read from environment with jenkins
             //keyPassword System.getenv("KEY_PASSWORD")
             //storePassword System.getenv("KEYSTORE_PASSWORD")
         }
 
-
     }
+
 
     buildTypes {
         release {
