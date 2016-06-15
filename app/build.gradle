@@ -53,7 +53,7 @@ android {
             storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
 
             applicationVariants.all { variant ->
-                renameAPK(variant, defaultConfig, 'R')
+                renameAPK(variant, defaultConfig, 'release')
             }
 
             //Read from environment with jenkins
