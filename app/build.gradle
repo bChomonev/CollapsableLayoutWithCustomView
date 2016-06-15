@@ -1,4 +1,14 @@
 apply plugin: 'com.android.application'
+//remove this when using jenkins--->
+def getBuildVersionCode() {
+    def versionCodeToIncrement = 1;
+    def console = System.console()
+    if (console != null) {
+        versionCodeToIncrement = console.readLine("\nEnter versionCode: ")
+    }
+    return versionCodeToIncrement as int
+}
+//<--- remove this when using jenkins
 
 android {
     compileSdkVersion 23
@@ -7,21 +17,63 @@ android {
     defaultConfig {
         applicationId "com.chomonev.borislavchomonev.simpleapp"
         minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 3
+        targetSdkVersion 21
+
+        //Get versionCode from jenkins environment variable
+        // versionCode System.getenv("BUILD_NUMBER") as Integer ?: 9999
+        versionCode getBuildVersionCode()
+
         versionName "1.0"
     }
+
+    signingConfigs {
+        release {
+            //remove this when using jenkins --->
+            def password = 'NLC3rTPassCert'
+            def keyStorePassword = 'K3ySt0r3APKPasS'
+//            def console = System.console()
+//
+//            if (console != null) {
+//                password = console.readLine("\nEnter key password: ")
+//                keyStorePassword = console.readLine("\nEnter keystore password: ")
+//            }
+            //<--- remove this when using jenkins
+
+            keyAlias 'natlot'
+            storePassword keyStorePassword
+            keyPassword password
+//            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
+            storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
+
+            //Read from environment with jenkins
+            //keyPassword System.getenv("KEY_PASSWORD")
+            //storePassword System.getenv("KEYSTORE_PASSWORD")
+        }
+
+
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
-}
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.android.support:design:23.2.0'
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
+
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        testCompile 'junit:junit:4.12'
+        compile 'com.android.support:appcompat-v7:23.2.0'
+        compile 'com.android.support:design:23.2.0'
+    }
 }
