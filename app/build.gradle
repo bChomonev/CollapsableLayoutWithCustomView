@@ -50,7 +50,7 @@ android {
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         def fileName = outputFile.name.replace('.apk', "-${versionName}.apk")
-                        output.outputFile = new File('/Users/chomonev/Android Projects/SimpleApp/app/wtf', fileName)
+                        output.outputFile = new File('app/', fileName)
                     }
                 }
             }
