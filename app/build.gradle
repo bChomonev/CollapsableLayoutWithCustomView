@@ -49,8 +49,8 @@ android {
             keyAlias 'natlot'
             storePassword keyStorePassword
             keyPassword password
-            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
-//            storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
+//            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
+            storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
 
             applicationVariants.all { variant ->
                 renameAPK(variant, defaultConfig, 'R')
