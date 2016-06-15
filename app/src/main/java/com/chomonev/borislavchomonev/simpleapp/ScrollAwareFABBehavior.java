@@ -1,4 +1,4 @@
-package com.example.borislavchomonev.simpleapp;
+package com.chomonev.borislavchomonev.simpleapp;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;

@@ -1,4 +1,4 @@
-package com.example.borislavchomonev.simpleapp;
+package com.chomonev.borislavchomonev.simpleapp;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
