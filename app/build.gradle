@@ -50,7 +50,8 @@ android {
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
                         def fileName = outputFile.name.replace('.apk', "-${versionName}.apk")
-                        output.outputFile = new File('GitHubSimpleVIew/ws/app/', fileName)///Users/chomonev/Android Projects/SimpleApp/app/wtf
+//                        output.outputFile = new File('GitHubSimpleVIew/ws/app/', fileName)///Users/chomonev/Android Projects/SimpleApp/app/wtf
+                        output.outputFile = new File('/Users/Shared/Jenkins/Desktop/jenkins/', fileName)
                     }
                 }
             }
