@@ -20,7 +20,7 @@ android {
         targetSdkVersion 21
 
         //Get versionCode from jenkins environment variable
-        versionCode System.getenv("BUILD_NUMBER") as Integer
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 13
 //        versionCode getBuildVersionCode()
 
         versionName "1.0"
