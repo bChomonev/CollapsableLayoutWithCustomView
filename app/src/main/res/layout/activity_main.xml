@@ -45,5 +45,5 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/icon_repeat_active"
         app:fabSize="normal"
-        app:layout_behavior="com.example.borislavchomonev.simpleapp.ScrollAwareFABBehavior" />
+        app:layout_behavior="com.chomonev.borislavchomonev.simpleapp.ScrollAwareFABBehavior" />
 </android.support.design.widget.CoordinatorLayout>
