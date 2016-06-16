@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(mLayoutManager);
 
-            List<String> newData = new ArrayList<>();
+            List<String> newData = new ArrayList<String>();
             for (int i = 1; i <= 200; i++) {
                 newData.add("Hello World " + i);
             }
