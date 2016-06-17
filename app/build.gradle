@@ -1,15 +1,4 @@
 apply plugin: 'com.android.application'
-//remove this when using jenkins--->
-def getBuildVersionCode() {
-    def versionCodeToIncrement = 1;
-    def console = System.console()
-    if (console != null) {
-        versionCodeToIncrement = console.readLine("\nEnter versionCode: ")
-    }
-    return versionCodeToIncrement as int
-}
-//<--- remove this when using jenkins
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -20,8 +9,7 @@ android {
         targetSdkVersion 21
 
         //Get versionCode from jenkins environment variable
-        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 13
-//        versionCode getBuildVersionCode()
+        versionCode System.getenv("BUILD_NUMBER") as Integer
 
         versionName "1.0"
     }
@@ -41,28 +29,15 @@ android {
 
             keyAlias 'natlot'
             storePassword keyStorePassword
-            keyPassword password
+//            keyPassword password
 //            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
             storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
 
-//            applicationVariants.all { variant ->
-//                variant.outputs.each { output ->
-//                    def outputFile = output.outputFile
-//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-//                        def fileName = outputFile.name.replace('.apk', "-${versionName}.apk")
-////                        output.outputFile = new File('GitHubSimpleVIew/ws/app/', fileName)///Users/chomonev/Android Projects/SimpleApp/app/wtf
-//                        output.outputFile = new File('/Users/Shared/Jenkins/Desktop/jenkins/', fileName)
-//                    }
-//                }
-//            }
-
             //Read from environment with jenkins
-            //keyPassword System.getenv("KEY_PASSWORD")
+            keyPassword System.getenv("KEY_PASSWORD")
             //storePassword System.getenv("KEYSTORE_PASSWORD")
         }
-
     }
-
 
     buildTypes {
         release {
