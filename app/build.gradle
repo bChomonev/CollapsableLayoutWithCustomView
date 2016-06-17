@@ -29,13 +29,13 @@ android {
 
             keyAlias 'natlot'
             storePassword keyStorePassword
-            keyPassword password
+//            keyPassword password
 //            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
             storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
 
             //Read from environment with jenkins
-            //keyPassword System.getenv("KEY_PASSWORD")
-            //storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyPassword System.getenv("KEY_PASSWORD")
+//            storePassword System.getenv("KEYSTORE_PASSWORD")
         }
     }
 
@@ -59,7 +59,7 @@ android {
     dependencies {
         compile fileTree(dir: 'libs', include: ['*.jar'])
         testCompile 'junit:junit:4.12'
-        compile 'com.android.support:appcompat-v7:23.0.0'
+        compile 'com.android.support:appcompat-v7:23.1.0'
         compile 'com.android.support:design:23.1.0'
     }
 }
