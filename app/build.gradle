@@ -17,8 +17,8 @@ android {
     signingConfigs {
         release {
             //remove this when using jenkins --->
-            def password = 'NLC3rTPassCert'
-            def keyStorePassword = 'K3ySt0r3APKPasS'
+//            def password = 'NLC3rTPassCert'
+//            def keyStorePassword = 'K3ySt0r3APKPasS'
 //            def console = System.console()
 //
 //            if (console != null) {
@@ -27,15 +27,16 @@ android {
 //            }
             //<--- remove this when using jenkins
 
-            keyAlias 'natlot'
-            storePassword keyStorePassword
+//            keyAlias 'natlot'
+//            storePassword keyStorePassword
 //            keyPassword password
 //            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
             storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
 
             //Read from environment with jenkins
+            keyAlias System.getenv("ALIAS")
             keyPassword System.getenv("KEY_PASSWORD")
-//            storePassword System.getenv("KEYSTORE_PASSWORD")
+            storePassword System.getenv("KEYSTORE_PASSWORD")
         }
     }
 
