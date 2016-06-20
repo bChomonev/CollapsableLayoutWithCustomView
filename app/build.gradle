@@ -31,7 +31,7 @@ android {
 //            storePassword keyStorePassword
 //            keyPassword password
 //            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
-            storeFile file('/Users/Shared/Jenkins/Desktop/jenkins/lotteryKeystore.jks')
+            storeFile file('~/jenkinsKeyStores/lotteryKeystore.jks')
 
             //Read from environment with jenkins
             keyAlias System.getenv("ALIAS")
