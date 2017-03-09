@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bigImage = (ImageView) findViewById(R.id.image_top);
@@ -33,9 +34,16 @@ public class MainActivity extends AppCompatActivity {
         final CustomPagerAdapter adapter = new CustomPagerAdapter(getSupportFragmentManager(), this);
         initPagerAndTabs(mPager, adapter);
         initFloatingBtn(mPager, adapter);
+
+
+        RxTest rxTest = new RxTest();
+        rxTest.test();
+        rxTest.testList();
+
     }
 
     private void initPagerAndTabs(final ViewPager mPager, final CustomPagerAdapter adapter) {
+
         mPager.setAdapter(adapter);
         SlidingTabLayout mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
         mTabs.setCustomTabView(R.layout.custom_tabs_view, R.id.tabText);
@@ -50,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
         mTabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
             }
 
             @Override
             public void onPageSelected(int position) {
+
             }
 
             @Override
@@ -79,10 +89,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFloatingBtn(final ViewPager mPager, final CustomPagerAdapter adapter) {
+
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 boolean visible = fab.getVisibility() == View.VISIBLE;
                 if (visible) {
                     fab.hide();
@@ -93,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeImage(int position) {
+
         switch (position) {
             case 0:
                 bigImage.setImageResource(R.drawable.image_one);
@@ -109,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changePage(ViewPager mPager, CustomPagerAdapter adapter) {
+
         int currentItem = mPager.getCurrentItem();
         if (goRight) {
             if (currentItem >= adapter.getCount() - 1) {
@@ -133,12 +147,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public static class MyFragment extends Fragment {
         public static MyFragment getInstance(int position) {
+
             return new MyFragment();
         }
 
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
             RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.view_fragment, container, false);
             LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
             recyclerView.setLayoutManager(mLayoutManager);

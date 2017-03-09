@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_holder"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+    <ImageView
+        android:id="@+id/info_epg_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bar_now"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/info_epg_overlay_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/epg_info_title"
+        android:adjustViewBounds="true"
+        android:alpha="0"
+        android:background="@drawable/bar_next_down_2"
+        android:scaleType="fitXY"/>
+
+    <RelativeLayout
+        android:id="@+id/info_epg_time_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/epg_info_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="15:50"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/epg_info_now_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="СЕГА"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/epg_info_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:padding="3dp"
+            android:text="06.12.2016"
+            android:textColor="@android:color/white"/>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/epg_info_date"
+            android:background="@color/colorAccent"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/epg_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/info_epg_time_holder"
+        android:padding="10dp"
+        android:text="Game of thrones"
+        android:textSize="18sp"/>
+
+    <SeekBar
+        android:id="@+id/epg_info_seekbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="40dp"
+        android:layout_toRightOf="@id/info_epg_time_holder"
+        android:paddingBottom="5dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumbOffset="0dp"/>
+
+</RelativeLayout>

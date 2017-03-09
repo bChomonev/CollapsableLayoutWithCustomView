@@ -1,36 +1,21 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.chomonev.borislavchomonev.simpleapp"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 21
 
-        //Get versionCode from jenkins environment variable
-        versionCode System.getenv("BUILD_NUMBER") as Integer
-
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 1
         versionName "1.0"
     }
 
     signingConfigs {
         release {
-            //remove this when using jenkins --->
-//            def password = 'NLC3rTPassCert'
-//            def keyStorePassword = 'K3ySt0r3APKPasS'
-//            def console = System.console()
-//
-//            if (console != null) {
-//                password = console.readLine("\nEnter key password: ")
-//                keyStorePassword = console.readLine("\nEnter keystore password: ")
-//            }
-            //<--- remove this when using jenkins
-
-//            keyAlias 'natlot'
-//            storePassword keyStorePassword
-//            keyPassword password
-//            storeFile file('/Users/chomonev/Android Projects/NationalLottery/lotteryKeystore.jks')
             storeFile file('/Users/Shared/Jenkins/Desktop/jenkinsKeyStores/lotteryKeystore.jks')
 
             //Read from environment with jenkins
@@ -62,5 +47,11 @@ android {
         testCompile 'junit:junit:4.12'
         compile 'com.android.support:appcompat-v7:23.1.0'
         compile 'com.android.support:design:23.1.0'
+
+        compile "io.reactivex:rxjava:1.2.0"
+        compile "io.reactivex:rxandroid:1.2.1"
+
+//        compile 'com.azoft.carousellayoutmanager:carousel:1.1.9'
+        compile project(':carousel')
     }
 }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SimpleApp</string>
     <string name="action_settings">Settings</string>
+    <string name="hello">Hello World, UITest!</string>
 
     <string-array name="tabs">
         <item>Tab 1</item>
