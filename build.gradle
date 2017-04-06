@@ -16,7 +16,6 @@ buildscript {
 plugins {
     id "de.undercouch.download" version "3.1.2"
 }
-apply plugin: 'checkstyle'
 import de.undercouch.gradle.tasks.download.Download
 
 task downloadJks(type: Download) {
@@ -24,6 +23,8 @@ task downloadJks(type: Download) {
     dest "${project.rootDir}/build/"
 }
 task('assembleRelease', dependsOn: 'downloadJks') {
+    //Казва на gradle, че всеки път преди да се изпълни задачата assembleRelease,
+    //трябва да се изпълни създадената от нас задача downloadJks
 }
 
 allprojects {
