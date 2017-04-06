@@ -5,11 +5,25 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.3.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath 'de.undercouch:gradle-download-task:3.1.2'
     }
+}
+
+plugins {
+    id "de.undercouch.download" version "3.1.2"
+}
+apply plugin: 'checkstyle'
+import de.undercouch.gradle.tasks.download.Download
+
+task downloadJks(type: Download) {
+    src 'http://buildtools.office/jenkins/android/natLottery/natLottery.jks'
+    dest "${project.rootDir}/build/"
+}
+task('assembleRelease', dependsOn: 'downloadJks') {
 }
 
 allprojects {
